@@ -39,7 +39,7 @@ targets:
         INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.music
         INFOPLIST_KEY_NSHumanReadableCopyright: ""
         ENABLE_APP_SANDBOX: NO
-        MARKETING_VERSION: "1.0"
+        MARKETING_VERSION: "0.1.0"
         CURRENT_PROJECT_VERSION: "1"
 
   MIDITransposeControllerTests:

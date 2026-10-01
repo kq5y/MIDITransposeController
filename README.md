@@ -41,6 +41,19 @@ Global hotkeys can be changed in Settings. The current value is also shown in th
 Pick the MIDI output on the main window; the choice is remembered. When a device is connected
 while no MIDI outputs exist, it is selected automatically.
 
+## Install
+
+Download `MIDITransposeController-<version>.zip` from
+[Releases](https://github.com/kq5y/MIDITransposeController/releases), unzip it, and move the app to
+`/Applications`.
+
+The app is ad-hoc signed and not notarized, so macOS blocks the first launch. Open it once, then
+allow it in **System Settings → Privacy & Security → Open Anyway**. Alternatively:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/MIDITransposeController.app
+```
+
 ## Build
 
 Requires Xcode and [XcodeGen](https://github.com/yonaskolb/XcodeGen).
