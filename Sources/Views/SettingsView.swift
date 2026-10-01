@@ -81,22 +81,21 @@ private struct SysExTab: View {
                 templateStatus
             }
             LabeledContent("書式") {
-                Grid(alignment: .leading, horizontalSpacing: 12, verticalSpacing: 3) {
-                    GridRow {
-                        Text("F0 7F …")
-                        Text("16進数2桁のバイトを空白区切り")
-                    }
-                    GridRow {
-                        Text("{v:offset64}")
-                        Text("64 + 値")
-                    }
-                    GridRow {
-                        Text("{v:signed7}")
-                        Text("7bitの2の補数")
-                    }
-                    GridRow {
-                        Text("{v:nibble}")
-                        Text("8bitの2の補数を上位・下位4bitに分割")
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("16進数2桁のバイトを空白区切り")
+                    Grid(alignment: .leading, horizontalSpacing: 12, verticalSpacing: 3) {
+                        GridRow {
+                            Text("{v:offset64}")
+                            Text("64 + 値")
+                        }
+                        GridRow {
+                            Text("{v:signed7}")
+                            Text("7bitの2の補数")
+                        }
+                        GridRow {
+                            Text("{v:nibble}")
+                            Text("8bitの2の補数を上位・下位4bitに分割")
+                        }
                     }
                 }
                 .font(.callout)
@@ -119,12 +118,12 @@ private struct SysExTab: View {
         switch validate(draft) {
         case .success(let bytes):
             Text(SysExBuilder.hexString(bytes))
-                .font(.body.monospaced())
+                .font(.callout)
                 .foregroundStyle(.secondary)
                 .textSelection(.enabled)
         case .failure(let error):
             Text(error.localizedDescription)
-                .font(.caption)
+                .font(.callout)
                 .foregroundStyle(.red)
         }
     }
