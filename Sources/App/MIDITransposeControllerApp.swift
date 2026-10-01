@@ -15,6 +15,11 @@ struct MIDITransposeControllerApp: App {
         .defaultSize(width: 420, height: 340)
         .windowResizability(.contentMinSize)
 
+        Settings {
+            SettingsView()
+                .environmentObject(controller)
+        }
+
         MenuBarExtra {
             MenuBarContentView()
                 .environmentObject(controller)
