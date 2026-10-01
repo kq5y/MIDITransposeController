@@ -14,6 +14,11 @@ settings:
     DEVELOPMENT_TEAM: ""
     ENABLE_HARDENED_RUNTIME: NO
 
+packages:
+  KeyboardShortcuts:
+    url: https://github.com/sindresorhus/KeyboardShortcuts
+    from: "1.10.0"
+
 targets:
   MIDITransposeController:
     type: application
@@ -21,6 +26,7 @@ targets:
     sources:
       - path: Sources
     dependencies:
+      - package: KeyboardShortcuts
       - sdk: CoreMIDI.framework
     settings:
       base:
