@@ -25,6 +25,7 @@ targets:
     platform: macOS
     sources:
       - path: Sources
+      - path: Resources
     dependencies:
       - package: KeyboardShortcuts
       - sdk: CoreMIDI.framework
@@ -33,6 +34,7 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: local.miditranspose.MIDITransposeController
         PRODUCT_NAME: MIDITransposeController
         GENERATE_INFOPLIST_FILE: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         INFOPLIST_KEY_CFBundleDisplayName: MIDI Transpose
         INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.music
         INFOPLIST_KEY_NSHumanReadableCopyright: ""
