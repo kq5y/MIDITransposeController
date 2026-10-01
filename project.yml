@@ -34,9 +34,26 @@ targets:
         MARKETING_VERSION: "1.0"
         CURRENT_PROJECT_VERSION: "1"
 
+  MIDITransposeControllerTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: Tests
+    dependencies:
+      - target: MIDITransposeController
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.miditranspose.MIDITransposeControllerTests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/MIDITransposeController.app/Contents/MacOS/MIDITransposeController"
+        BUNDLE_LOADER: "$(TEST_HOST)"
 
 schemes:
   MIDITransposeController:
     build:
       targets:
         MIDITransposeController: all
+        MIDITransposeControllerTests: [test]
+    test:
+      targets:
+        - MIDITransposeControllerTests
