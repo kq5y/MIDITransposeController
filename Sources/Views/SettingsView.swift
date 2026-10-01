@@ -83,23 +83,23 @@ private struct SysExTab: View {
             LabeledContent("書式") {
                 Grid(alignment: .leading, horizontalSpacing: 12, verticalSpacing: 3) {
                     GridRow {
-                        Text("F0 7F …").monospaced()
+                        Text("F0 7F …")
                         Text("16進数2桁のバイトを空白区切り")
                     }
                     GridRow {
-                        Text("{v:offset64}").monospaced()
+                        Text("{v:offset64}")
                         Text("64 + 値")
                     }
                     GridRow {
-                        Text("{v:signed7}").monospaced()
-                        Text("7bit の 2 の補数")
+                        Text("{v:signed7}")
+                        Text("7bitの2の補数")
                     }
                     GridRow {
-                        Text("{v:nibble}").monospaced()
-                        Text("8bit の 2 の補数を上位・下位に分割")
+                        Text("{v:nibble}")
+                        Text("8bitの2の補数を上位・下位4bitに分割")
                     }
                 }
-                .font(.caption)
+                .font(.callout)
                 .foregroundStyle(.secondary)
             }
             LabeledContent("") {
